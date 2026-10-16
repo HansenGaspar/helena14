@@ -1,7 +1,15 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { CalendarDays, ChevronDown, Clock3, Heart, MapPin, Sparkles } from "lucide-react";
+import {
+  CalendarDays,
+  ChevronDown,
+  Clock3,
+  ExternalLink,
+  Heart,
+  MapPin,
+  Sparkles,
+} from "lucide-react";
 import { useState } from "react";
 
 import { StarsBackground } from "@/components/animate-ui/components/backgrounds/stars";
@@ -115,6 +123,7 @@ export default function Home() {
                         icon={<MapPin />}
                         title="Lugar"
                         value="Club La Quinta, Santo Tome"
+                        mapsUrl="https://maps.app.goo.gl/byxYKRZ7RnwjyM4i8"
                         revealed={revealedDetails[2]}
                         shouldReduceMotion={shouldReduceMotion}
                         onReveal={() =>
@@ -149,6 +158,7 @@ function RevealDetail({
   icon,
   title,
   value,
+  mapsUrl,
   revealed,
   shouldReduceMotion,
   onReveal,
@@ -156,6 +166,7 @@ function RevealDetail({
   icon: React.ReactNode;
   title: string;
   value: string;
+  mapsUrl?: string;
   revealed: boolean;
   shouldReduceMotion: boolean | null;
   onReveal: () => void;
@@ -163,7 +174,7 @@ function RevealDetail({
   return (
     <div className="relative min-h-20 [perspective:900px]">
       <div className="flex min-h-20 items-center justify-center rounded-sm bg-[#dff8f3] px-5">
-        <Detail icon={icon} title={title} value={value} />
+        <Detail icon={icon} title={title} value={value} mapsUrl={mapsUrl} />
       </div>
       <AnimatePresence>
         {!revealed && (
@@ -201,10 +212,12 @@ function Detail({
   icon,
   title,
   value,
+  mapsUrl,
 }: {
   icon: React.ReactNode;
   title: string;
   value: string;
+  mapsUrl?: string;
 }) {
   return (
     <div className="flex items-center gap-3 sm:flex-col sm:gap-1 sm:text-center">
@@ -216,6 +229,17 @@ function Detail({
           {title}
         </span>
         <span className="mt-0.5 block font-serif text-base text-[#164d50]">{value}</span>
+        {mapsUrl && (
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-[#08777d] underline decoration-[#08777d]/40 underline-offset-2 transition-colors hover:text-[#07565d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#08777d] focus-visible:ring-offset-2"
+          >
+            Ver ubicación
+            <ExternalLink className="size-3" aria-hidden="true" />
+          </a>
+        )}
       </span>
     </div>
   );
