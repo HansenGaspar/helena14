@@ -93,7 +93,7 @@ export default function Home() {
                         Helena
                       </p>
                       <h2 className="mt-4 font-serif text-5xl italic text-[#07565d] sm:text-6xl">
-                        Cumplo 14 
+                        Mi cumple 14
                       </h2>
                       <div className="mx-auto mt-5 h-px w-16 bg-[#25a9a5]" />
                     </div>
@@ -136,7 +136,7 @@ export default function Home() {
                       <button
                         type="button"
                         className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#0b858a] px-5 py-2 text-sm font-semibold text-[#effffb] shadow-[0_8px_16px_rgba(0,72,76,0.22)] transition-colors hover:bg-[#075f67] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#08777d] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f2fffc]"
-                        onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfaUF8HNecfZiP7At6pXl_MAzobzmvbKNGyR88DyEoYdgEbgg/viewform?usp=header", "_blank")}
+                        onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdmNuxDsYgo7P9KkR0gJPfaYJKlzicX0ijvQKtISTa4Q5UwHQ/viewform?usp=publish-editor", "_blank")}
                       >
                         <p className="font-serif text-xl italic text-[#effffb]">
                         Confirmar asistencia
