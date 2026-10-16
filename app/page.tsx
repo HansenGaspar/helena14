@@ -220,7 +220,7 @@ function Detail({
   mapsUrl?: string;
 }) {
   return (
-    <div className="flex items-center gap-3 sm:flex-col sm:gap-1 sm:text-center">
+    <div className="flex items-center gap-3 sm:flex-col sm:gap-1 sm:text-center my-3">
       <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#bdebe4] text-[#08777d]">
         {icon}
       </span>
